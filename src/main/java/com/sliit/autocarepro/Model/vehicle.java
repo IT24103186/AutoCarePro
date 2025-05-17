@@ -1,14 +1,18 @@
 package com.sliit.autocarepro.Model;
 
+import java.util.Date;
+
 public class vehicle {
+    private int vehicleId;
     private String make;        // eg. Toyota
     private String model;       // eg. CR-V
     private String color;       // eg. White
-    private String year;        // eg. 2020
+    private Date year;        // eg. 2020
     private String plateNumber; // eg. CAR-1234
     private String VIN;         // eg. 1HGCM82633A004352
 
-    public vehicle(String make, String model, String color, String year, String plateNumber, String VIN) {
+    public vehicle(int vehicleId,String make, String model, String color, Date year, String plateNumber, String VIN) {
+        this.vehicleId = vehicleId;
         this.make = make;
         this.model = model;
         this.color = color;
@@ -16,6 +20,9 @@ public class vehicle {
         this.plateNumber = plateNumber;
         this.VIN = VIN;
     }
+
+    public int getVehicleId() {return vehicleId;}
+    public void setVehicleId(int vehicleId) {this.vehicleId = vehicleId;}
 
     public String getMake() {
         return make;
@@ -38,10 +45,10 @@ public class vehicle {
         this.color = color;
     }
 
-    public String getYear(String year) {
+    public Date getYear() {
         return year;
     }
-    public void setYear(String year) {
+    public void setYear(Date year) {
         this.year = year;
     }
 
