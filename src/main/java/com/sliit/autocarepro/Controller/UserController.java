@@ -1,35 +1,37 @@
 package com.sliit.autocarepro.Controller;
 
+import com.sliit.autocarepro.Model.User;
+import com.sliit.autocarepro.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/customers")
-public class CustomerController {
+@RequestMapping("/api/users")
+public class UserController {
 
     @Autowired
-    private CustomerService customerService;
+    private UserService userService;
 
     @PostMapping
-    public Customer registerCustomer(@RequestBody Customer customer) {
-        customerService.registerCustomer(customer);
-        return customer;
+    public String registerUser(@RequestBody User user) {
+        return userService.registeruser(user);
     }
 
     @GetMapping
-    public List<Customer> getAllCustomers() {
-        return customerService.getAllCustomers();
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
     }
 
     @PutMapping
-    public Customer updateCustomer(@RequestBody Customer customer) {
-        customerService.updateCustomer(customer);
-        return customer;
+    public User updateUser(@RequestBody User user) {
+        userService.updateUser(user);
+        return user;
     }
 
     @DeleteMapping(params = "id")
-    public void deleteCustomer(@RequestParam int id) {
-        customerService.deleteCustomer(id);
+    public void deleteUser(@RequestParam int id) {
+        userService.deleteUser(id);
     }
 }
