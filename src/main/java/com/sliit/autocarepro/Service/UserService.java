@@ -2,33 +2,36 @@ package com.sliit.autocarepro.Service;
 
 import com.sliit.autocarepro.Model.User;
 import com.sliit.autocarepro.Repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
 public class UserService {
+
+
+
     private final UserRepository userRepository;
 
     @Autowired
     public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+        this.userRepository = userRepository;}
+
+
+        public String registeruser(User user) {
+        return userRepository.save(user);
     }
 
-    public void registerCustomer(User user) {
-        userRepository.save(user);
-    }
-
-    public List<User> getAllCustomers() {
+    public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
-    public void updateCustomer(User customer) {
+    public void updateUser(User customer) {
         userRepository.update(customer);
     }
 
-    public void deleteCustomer(int id) {
+    public void deleteUser(int id) {
         userRepository.delete(id);
     }
 }
