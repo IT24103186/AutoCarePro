@@ -9,11 +9,9 @@ import java.util.List;
 @Repository
 public class ServiceRecordRepository {
     private LinkedList<ServiceRecord> serviceRecords = new LinkedList<>();
-    private static int nextRecordId = 1;
 
     public String save(ServiceRecord serviceRecord) {
         if (serviceRecord.getRecordID() == 0) {
-            serviceRecord.setRecordID(nextRecordId++);
         }
         serviceRecords.add(serviceRecord);
         return "Registration Successful";

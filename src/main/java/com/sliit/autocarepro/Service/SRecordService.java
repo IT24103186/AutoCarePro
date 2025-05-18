@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class SRecordService {
-    
+
     private final ServiceRecordRepository serviceRecordRepository;
 
     @Autowired
