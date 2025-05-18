@@ -24,14 +24,13 @@ public class ServiceTypeController {
         return serviceTypeService.getAllServiceTypes();
     }
 
-    @PutMapping
-    public ServiceType updateServiceType(@RequestBody ServiceType serviceType) {
-        serviceTypeService.updateServiceType(serviceType);
-        return serviceType;
+    @PutMapping("/{id}")
+    public boolean updateServiceType(@PathVariable("id") int id , @RequestBody ServiceType serviceType) {
+        return  serviceTypeService.updateServiceType(id , serviceType);
     }
 
-    @DeleteMapping(params = "id")
-    public void deleteServiceType(@RequestParam int id) {
-        serviceTypeService.deleteServiceType(id);
+    @DeleteMapping("/{id}")
+    public boolean deleteServiceType(@PathVariable("id") int id) {
+        return serviceTypeService.deleteServiceType(id);
     }
 }

@@ -26,11 +26,11 @@ public class ServiceTypeService {
         return serviceTypeRepository.findAll();
     }
 
-    public void updateServiceType(ServiceType serviceType) {
-        serviceTypeRepository.update(serviceType);
+    public boolean updateServiceType(int id , ServiceType serviceType) {
+       return  serviceTypeRepository.update(id , serviceType);
     }
 
-    public void deleteServiceType(int id) {
-        serviceTypeRepository.delete(id);
+    public boolean deleteServiceType(int id) {
+        return serviceTypeRepository.delete(id);
     }
 }

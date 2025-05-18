@@ -23,21 +23,23 @@ public class ServiceTypeRepository {
         return new LinkedList<>(serviceTypes);
     }
 
-    public ServiceType findById(int id) {
+    public ServiceType findById(long id) {
         return serviceTypes.stream().filter(s -> s.getId() == id).findFirst().orElse(null);
     }
 
-    public void update(ServiceType serviceType) {
-        ServiceType existing = findById(serviceType.getId());
+    public boolean update(int id , ServiceType serviceType) {
+        ServiceType existing = findById(id);
         if (existing != null) {
             existing.setService(serviceType.getService());
             existing.setDescription(serviceType.getDescription());
             existing.setTimeRequired(serviceType.getTimeRequired());
             existing.setPriceRange(serviceType.getPriceRange());
         }
+        return true;
     }
 
-    public void delete(int id) {
+    public boolean delete(int id) {
         serviceTypes.removeIf(s -> s.getId() == id);
+        return true;
     }
 }
