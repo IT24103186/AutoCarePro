@@ -2,7 +2,7 @@ package com.sliit.autocarepro.Model;
 
 import java.util.Date;
 
-public class vehicle {
+public class Vehicle {
     private int vehicleId;
     private String make;        // eg. Toyota
     private String model;       // eg. CR-V
@@ -11,7 +11,7 @@ public class vehicle {
     private String plateNumber; // eg. CAR-1234
     private String VIN;         // eg. 1HGCM82633A004352
 
-    public vehicle(int vehicleId,String make, String model, String color, Date year, String plateNumber, String VIN) {
+    public Vehicle(int vehicleId, String make, String model, String color, Date year, String plateNumber, String VIN) {
         this.vehicleId = vehicleId;
         this.make = make;
         this.model = model;

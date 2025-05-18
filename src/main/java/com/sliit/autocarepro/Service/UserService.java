@@ -19,7 +19,7 @@ public class UserService {
         this.userRepository = userRepository;}
 
 
-        public String registeruser(User user) {
+    public String registeruser(User user) {
         return userRepository.save(user);
     }
 
