@@ -17,14 +17,18 @@ public class ServiceRecordController {
     }
 
     @GetMapping
+    public List<ServiceRecord> getAllServiveRecord() {
         return sRecordService.getAllServiceRecord();
     }
 
+    @PutMapping
     public String updateServiceRecord(@PathVariable("recordID")int recordID,@RequestBody ServiceRecord serviceRecord) {
 
         return sRecordService.updateServiceRecord(serviceRecord,recordID);
     }
 
+    @DeleteMapping(params = "id")
+    public void deleteServiceRecord(@RequestParam int id) {
         sRecordService.deleteServiceRecord(id);
     }
 }

@@ -10,11 +10,15 @@ import java.util.List;
 @Service
 public class SRecordService {
 
+
+
     private final ServiceRecordRepository serviceRecordRepository;
 
     @Autowired
     public SRecordService(ServiceRecordRepository serviceRecordRepository) {
         this.serviceRecordRepository = serviceRecordRepository;}
+
+
         public String registerServiceRecord(ServiceRecord serviceRecord) {
         return serviceRecordRepository.save(serviceRecord);
     }
