@@ -17,20 +17,20 @@ public class GarageService {
         this.garageRepository = garageRepository;
     }
 
-    public String registerGarage(Garage garage) {
-      return   garageRepository.save(garage);
+    public void registerGarage(Garage garage) {
+        garageRepository.save(garage);
     }
 
     public List<Garage> getAllGarages() {
         return garageRepository.findAll();
     }
 
-    public boolean updateGarage(int id , Garage garage) {
-      return garageRepository.update(id , garage);
+    public void updateGarage(Garage garage) {
+        garageRepository.update(garage);
     }
 
-    public boolean deleteGarage(int id) {
-      return garageRepository.delete(id);
+    public void deleteGarage(String id) {
+        garageRepository.delete(id);
     }
 }
 
