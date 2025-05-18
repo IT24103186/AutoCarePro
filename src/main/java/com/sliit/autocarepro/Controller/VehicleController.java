@@ -25,13 +25,13 @@ public class VehicleController {
     }
 
     @PutMapping
-    public Vehicle updateVehicle(@RequestBody Vehicle vehicle) {
-        vehicleService.updateVehicle(vehicle);
+    public Vehicle updateVehicle(@PathVariable("vehicleId")int vehicleId, @RequestBody Vehicle vehicle) {
+        vehicleService.updateVehicle(vehicle, vehicleId);
         return vehicle;
     }
 
-    @DeleteMapping(params = "vehicleId")
-    public void deleteVehicle(@RequestParam int vehicleId) {
+    @DeleteMapping("/{vehicleID}")
+    public void deleteVehicle(@PathVariable ("int vehicleId")int vehicleId) {
         vehicleService.deleteVehicle(vehicleId);
     }
 }

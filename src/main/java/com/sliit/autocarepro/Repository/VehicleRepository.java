@@ -27,8 +27,8 @@ public class VehicleRepository {
     }
 
 
-    public void update(Vehicle vehicle) {
-        Vehicle existing = findById(vehicle.getVehicleId());
+    public void update(Vehicle vehicle, int vehicleId ) {
+        Vehicle existing = findById(vehicleId);
         if (existing != null) {
             existing.setMake(vehicle.getMake());
             existing.setModel(vehicle.getModel());

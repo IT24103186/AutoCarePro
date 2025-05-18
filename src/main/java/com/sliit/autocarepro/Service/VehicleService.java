@@ -9,14 +9,11 @@ import java.util.List;
 @Service
 public class VehicleService {
 
-
-
     private final VehicleRepository vehicleRepository;
 
     @Autowired
     public VehicleService(VehicleRepository vehicleRepository) {
         this.vehicleRepository = vehicleRepository;}
-
 
     public String registerVehicle(Vehicle vehicle) {
         return vehicleRepository.save(vehicle);
@@ -26,11 +23,11 @@ public class VehicleService {
         return vehicleRepository.findAll();
     }
 
-    public void updateVehicle(Vehicle vehicle) {
-        vehicleRepository.update(vehicle);
+    public void updateVehicle(Vehicle vehicle,int vehicleId) {
+        vehicleRepository.update(vehicle, vehicleId);
     }
 
-    public void deleteVehicle(int plateNumber) {
-        vehicleRepository.delete(plateNumber);
+    public void deleteVehicle(int vehiclesId) {
+        vehicleRepository.delete(vehiclesId);
     }
 }
