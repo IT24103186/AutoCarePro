@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 public class ServiceRecordController {
+
     @Autowired
     private SRecordService sRecordService;
 
@@ -17,18 +18,18 @@ public class ServiceRecordController {
     }
 
     @GetMapping
-    public List<ServiceRecord> getAllServiveRecord() {
+    public List<ServiceRecord> getAllServiceRecord() {
         return sRecordService.getAllServiceRecord();
     }
 
-    @PutMapping
+    @PutMapping("/{recordID}")
     public String updateServiceRecord(@PathVariable("recordID")int recordID,@RequestBody ServiceRecord serviceRecord) {
 
         return sRecordService.updateServiceRecord(serviceRecord,recordID);
     }
 
-    @DeleteMapping(params = "id")
-    public void deleteServiceRecord(@RequestParam int id) {
+    @DeleteMapping(  "/{id}")
+    public void deleteServiceRecord(@PathVariable("id") int id) {
         sRecordService.deleteServiceRecord(id);
     }
 }
