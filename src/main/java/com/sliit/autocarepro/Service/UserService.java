@@ -27,8 +27,8 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public void updateUser(User customer) {
-        userRepository.update(customer);
+    public void updateUser(User user, int id) {
+        userRepository.update(user,id);
     }
 
     public void deleteUser(int id) {

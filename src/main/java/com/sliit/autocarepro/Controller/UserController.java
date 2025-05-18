@@ -24,14 +24,14 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @PutMapping
-    public User updateUser(@RequestBody User user) {
-        userService.updateUser(user);
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable("id")int id ,@RequestBody User user) {
+        userService.updateUser(user, id);
         return user;
     }
 
-    @DeleteMapping(params = "id")
-    public void deleteUser(@RequestParam int id) {
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable("id")int id) {
         userService.deleteUser(id);
     }
 }
