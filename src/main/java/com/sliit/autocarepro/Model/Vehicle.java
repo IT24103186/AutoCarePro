@@ -3,11 +3,11 @@ package com.sliit.autocarepro.Model;
 import java.util.Date;
 
 public class Vehicle {
-    private int vehicleId;
+    private int vehicleId;      // eg. 1
     private String make;        // eg. Toyota
     private String model;       // eg. CR-V
     private String color;       // eg. White
-    private Date year;        // eg. 2020
+    private Date year;          // eg. 2020
     private String plateNumber; // eg. CAR-1234
     private String VIN;         // eg. 1HGCM82633A004352
 
