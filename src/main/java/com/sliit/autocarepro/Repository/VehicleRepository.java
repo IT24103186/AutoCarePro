@@ -1,34 +1,34 @@
 package com.sliit.autocarepro.Repository;
 
-import com.sliit.autocarepro.Model.vehicle;
+import com.sliit.autocarepro.Model.Vehicle;
 import org.springframework.stereotype.Repository;
 import java.util.LinkedList;
 import java.util.List;
 
 @Repository
-public class vehicleRepository {
-    private LinkedList<vehicle> vehicles = new LinkedList<>();
+public class VehicleRepository {
+    private LinkedList<Vehicle> Vehicles = new LinkedList<>();
     private static int nextId = 0;
 
-    public String save(vehicle vehicle) {
+    public String save(Vehicle vehicle) {
         if (vehicle.getVehicleId() == 1) {
             vehicle.setVehicleId(nextId++);
         }
-        vehicles.add(vehicle);
+        Vehicles.add(vehicle);
         return "Registration Successful";
     }
 
-    public List<vehicle> findAll() {
-        return new LinkedList<>(vehicles);
+    public List<Vehicle> findAll() {
+        return new LinkedList<>(Vehicles);
     }
 
-    public vehicle findById(int vehicleId) {
-        return vehicles.stream().filter(c -> c.getVehicleId() == vehicleId).findFirst().orElse(null);
+    public Vehicle findById(int vehicleId) {
+        return Vehicles.stream().filter(c -> c.getVehicleId() == vehicleId).findFirst().orElse(null);
     }
 
 
-    public void update(vehicle vehicle) {
-        vehicle existing = findById(vehicle.getVehicleId());
+    public void update(Vehicle vehicle) {
+        Vehicle existing = findById(vehicle.getVehicleId());
         if (existing != null) {
             existing.setMake(vehicle.getMake());
             existing.setModel(vehicle.getModel());
@@ -40,6 +40,6 @@ public class vehicleRepository {
     }
 
     public void delete(int vehicleId) {
-        vehicles.removeIf(c -> c.getVehicleId() == vehicleId);
+        Vehicles.removeIf(c -> c.getVehicleId() == vehicleId);
     }
 }

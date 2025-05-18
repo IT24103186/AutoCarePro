@@ -1,7 +1,7 @@
 package com.sliit.autocarepro.Controller;
 
-import com.sliit.autocarepro.Model.vehicle;
-import com.sliit.autocarepro.Service.vehicleService;
+import com.sliit.autocarepro.Model.Vehicle;
+import com.sliit.autocarepro.Service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,23 +9,23 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/vehicle")
-public class vehicleController {
+public class VehicleController {
 
     @Autowired
-    private vehicleService vehicleService;
+    private VehicleService vehicleService;
 
     @PostMapping
-    public String registerVehicle(@RequestBody vehicle vehicle) {
+    public String registerVehicle(@RequestBody Vehicle vehicle) {
         return vehicleService.registerVehicle(vehicle);
     }
 
     @GetMapping
-    public List<vehicle> getAllVehicles() {
+    public List<Vehicle> getAllVehicles() {
         return vehicleService.getAllVehicles();
     }
 
     @PutMapping
-    public vehicle updateVehicle(@RequestBody vehicle vehicle) {
+    public Vehicle updateVehicle(@RequestBody Vehicle vehicle) {
         vehicleService.updateVehicle(vehicle);
         return vehicle;
     }
