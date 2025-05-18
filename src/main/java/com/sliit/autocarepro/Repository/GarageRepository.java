@@ -12,35 +12,35 @@ public class GarageRepository {
     private LinkedList<Garage> garages = new LinkedList<>();
     private static int nextId = 1;
 
-    public void save(Garage garage) {
-        if (garage.getId() == null || garage.getId().isEmpty()) {
-            garage.setId(String.valueOf(nextId++));
+    public String save(Garage garage) {
+        if (garage.getId() == 0) {
+            garage.setId(nextId++);
         }
         garages.add(garage);
+        return "Registration Successful";
     }
 
     public List<Garage> findAll() {
         return new LinkedList<>(garages);
     }
 
-    public Garage findById(String id) {
-        return garages.stream()
-                .filter(g -> g.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+    public Garage findById(int id) {
+        return garages.stream().filter(c -> c.getId() == id).findFirst().orElse(null);
     }
 
-    public void update(Garage garage) {
-        Garage existing = findById(garage.getId());
+    public boolean update(int id , Garage garage) {
+        Garage existing = findById(id);
         if (existing != null) {
             existing.setBranch(garage.getBranch());
             existing.setLocation(garage.getLocation());
             existing.setManager(garage.getManager());
         }
+        return true;
     }
 
-    public void delete(String id) {
-        garages.removeIf(g -> g.getId().equals(id));
+    public boolean delete(int id) {
+        garages.removeIf(c -> c.getId() == id);
+        return true;
     }
 }
 
