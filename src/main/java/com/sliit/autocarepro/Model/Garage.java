@@ -5,7 +5,7 @@ public class Garage {
     private String id;
     private String branch;
     private String location;
-    private String managerID;
+    private String managerName;
 
     public Garage() { }
 
@@ -13,7 +13,7 @@ public class Garage {
         this.id       = id;
         this.branch   = branch;
         this.location = location;
-        this.managerID  = manager;
+        this.managerName  = manager;
     }
 
     public String getId() { return id; }
@@ -34,10 +34,10 @@ public class Garage {
     }
 
     public String getManager() {
-        return managerID;
+        return managerName;
     }
     public void setManager(String manager) {
-        this.managerID = manager;
+        this.managerName = manager;
     }
 }
 
