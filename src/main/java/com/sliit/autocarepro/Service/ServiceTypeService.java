@@ -2,7 +2,6 @@ package com.sliit.autocarepro.Service;
 
 import com.sliit.autocarepro.Model.ServiceType;
 import com.sliit.autocarepro.Repository.ServiceTypeRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
