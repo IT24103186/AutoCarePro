@@ -27,8 +27,8 @@ public class UserRepository {
     }
 
 
-    public void update(User user) {
-        User existing = findById(user.getId());
+    public void update(User user, int id) {
+        User existing = findById(id);
         if (existing != null) {
             existing.setName(user.getName());
             existing.setEmail(user.getEmail());
