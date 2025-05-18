@@ -1,13 +1,13 @@
 package com.sliit.autocarepro.Model;
 
-public class serviceType {
-    private Long id;
+public class ServiceType {
+    private int id;
     private String service;
     private String description;
     private String timeRequired;
     private String priceRange;
 
-    public serviceType(Long id, String service, String description, String timeRequired, String priceRange) {
+    public ServiceType(int id, String service, String description, String timeRequired, String priceRange) {
         this.id = id;
         this.service = service;
         this.description = description;
@@ -15,12 +15,11 @@ public class serviceType {
         this.priceRange = priceRange;
     }
 
-    public Long getId() {
-
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
