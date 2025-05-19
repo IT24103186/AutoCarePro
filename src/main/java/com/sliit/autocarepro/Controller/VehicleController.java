@@ -24,14 +24,14 @@ public class VehicleController {
         return vehicleService.getAllVehicles();
     }
 
-    @PutMapping
+    @PutMapping("/{vehicleId}")
     public Vehicle updateVehicle(@PathVariable("vehicleId")int vehicleId, @RequestBody Vehicle vehicle) {
         vehicleService.updateVehicle(vehicle, vehicleId);
         return vehicle;
     }
 
-    @DeleteMapping("/{vehicleID}")
-    public void deleteVehicle(@PathVariable ("int vehicleId")int vehicleId) {
+    @DeleteMapping("/{vehicleId}")
+    public void deleteVehicle(@PathVariable ("vehicleId")int vehicleId) {
         vehicleService.deleteVehicle(vehicleId);
     }
 }
