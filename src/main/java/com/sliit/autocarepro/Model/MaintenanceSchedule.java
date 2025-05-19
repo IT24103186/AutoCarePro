@@ -10,17 +10,15 @@ public class MaintenanceSchedule {
     private String plateNumber;
     private String serviceType;
     private String status;
-    private String notes;
 
 
-    public MaintenanceSchedule(int scheduleId, LocalDate date, LocalTime time, String plateNumber, String serviceType , String status, String notes) {
+    public MaintenanceSchedule(int scheduleId, LocalDate date, LocalTime time, String plateNumber, String serviceType , String status) {
         this.scheduleId = scheduleId;
         this.date = date;
         this.time = time;
         this.plateNumber = plateNumber;
         this.serviceType = serviceType;
         this.status = status;
-        this.notes = notes;
     }
 
 
@@ -44,7 +42,5 @@ public class MaintenanceSchedule {
     public String getStatus() {return status;}
     public void setStatus(String status) {this.status = status;}
 
-    public String getNotes() {return notes;}
-    public void setNotes(String notes) {this.notes = notes;}
 }
 

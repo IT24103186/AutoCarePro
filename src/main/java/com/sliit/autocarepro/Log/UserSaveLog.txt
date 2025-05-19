@@ -1,1 +1,1 @@
-id: 1, name: oo, email: vq@gmail.com, phone: 0122233355, password: qq, role: User
+id: 1, name: sandun, email: 123@gmail.com, phone: 0762944427, password: 1990, role: User
