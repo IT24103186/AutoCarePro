@@ -55,7 +55,7 @@ public class VehicleRepository {
 
     private String saveToTextFile() {
         String folderPath = "src/main/java/com/sliit/autocarepro/Log";
-        String filePath = folderPath + File.separator + "vehicleSaveLog.txt";
+        String filePath = folderPath + File.separator + "VehicleSaveLog.txt";
 
         // Create the Log folder if it doesn't exist
         File folder = new File(folderPath);

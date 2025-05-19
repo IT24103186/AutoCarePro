@@ -1,8 +1,13 @@
 package com.sliit.autocarepro.Repository;
 
 import com.sliit.autocarepro.Model.Garage;
+import com.sliit.autocarepro.Model.Vehicle;
 import org.springframework.stereotype.Repository;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,6 +22,7 @@ public class GarageRepository {
             garage.setId(nextId++);
         }
         garages.add(garage);
+        saveToTextFile();
         return "Registration Successful";
     }
 
@@ -35,12 +41,42 @@ public class GarageRepository {
             existing.setLocation(garage.getLocation());
             existing.setManager(garage.getManager());
         }
+        saveToTextFile();
         return true;
     }
 
     public boolean delete(int garageid) {
         garages.removeIf(c -> c.getId() == garageid);
+        saveToTextFile();
         return true;
+    }
+
+    private String saveToTextFile() {
+        String folderPath = "src/main/java/com/sliit/autocarepro/Log";
+        String filePath = folderPath + File.separator + "GarageSaveLog.txt";
+
+        // Create the Log folder if it doesn't exist
+        File folder = new File(folderPath);
+        if (!folder.exists()) {
+            boolean folderCreated = folder.mkdirs();
+            if (!folderCreated) {
+                return "Error creating Log folder at " + folderPath;
+            }
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            for (Garage record : garages) {
+                writer.write(String.format("garageId: %d, branch: %s, location: %s, managerName: %s ",
+                        record.getId(),
+                        record.getBranch(),
+                        record.getLocation(),
+                        record.getManager()));
+            }
+            return "Data successfully saved to " + filePath;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Error saving data to file: " + e.getMessage();
+        }
     }
 }
 
