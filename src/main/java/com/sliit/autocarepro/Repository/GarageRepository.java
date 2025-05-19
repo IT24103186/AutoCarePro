@@ -17,19 +17,19 @@ public class GarageRepository {
             garage.setId(nextId++);
         }
         garages.add(garage);
-        return "Service Type Registered Successfully";
+        return "Registration Successful";
     }
 
     public List<Garage> findAll() {
         return new LinkedList<>(garages);
     }
 
-    public Garage findById(int id) {
-        return garages.stream().filter(g -> g.getId() == id).findFirst().orElse(null);
+    public Garage findById(int garageid) {
+        return garages.stream().filter(c -> c.getId() == garageid).findFirst().orElse(null);
     }
 
-    public boolean update(int id , Garage garage) {
-        Garage existing = findById(id);
+    public boolean update(int garageid , Garage garage) {
+        Garage existing = findById(garageid);
         if (existing != null) {
             existing.setBranch(garage.getBranch());
             existing.setLocation(garage.getLocation());
@@ -38,8 +38,8 @@ public class GarageRepository {
         return true;
     }
 
-    public boolean delete(int id) {
-        garages.removeIf(g -> g.getId() == id);
+    public boolean delete(int garageid) {
+        garages.removeIf(c -> c.getId() == garageid);
         return true;
     }
 }
