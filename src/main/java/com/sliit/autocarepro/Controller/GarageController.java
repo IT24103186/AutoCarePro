@@ -25,13 +25,13 @@ public class GarageController {
     }
 
     @PutMapping("/{id}")
-    public boolean updateGarage(@PathVariable("id") int id ,@RequestBody Garage garage) {
-       return garageService.updateGarage(id, garage);
+    public boolean updateGarage(@PathVariable("id") int garageid ,@RequestBody Garage garage) {
+       return garageService.updateGarage(garageid, garage);
     }
 
     @DeleteMapping( "/{id}")
-    public void deleteGarage(@PathVariable("id") int id) {
-        garageService.deleteGarage(id);
+    public void deleteGarage(@PathVariable("id") int garageid) {
+        garageService.deleteGarage(garageid);
     }
 }
 

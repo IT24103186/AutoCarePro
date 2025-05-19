@@ -25,12 +25,12 @@ public class GarageService {
         return garageRepository.findAll();
     }
 
-    public boolean updateGarage(int id , Garage garage) {
-      return  garageRepository.update(id ,garage);
+    public boolean updateGarage(int garageid , Garage garage) {
+      return  garageRepository.update(garageid ,garage);
     }
 
-    public boolean deleteGarage(int id) {
-        return garageRepository.delete(id);
+    public boolean deleteGarage(int garageid) {
+        return garageRepository.delete(garageid);
     }
 }
 
