@@ -2,21 +2,21 @@ package com.sliit.autocarepro.Model;
 
 public class Garage {
 
-    private int garageid;
+    private int garageId;
     private String branch;
     private String location;
     private String managerName;
 
 
-    public Garage(int garageid,String branch, String location, String managerName) {
-        this.garageid = garageid;
+    public Garage(int garageId, String branch, String location, String managerName) {
+        this.garageId = garageId;
         this.branch   = branch;
         this.location = location;
         this.managerName  = managerName;
     }
 
-    public int getId() { return garageid; }
-    public void setId(int garageid) { this.garageid = garageid; }
+    public int getId() { return garageId; }
+    public void setId(int garageid) { this.garageId = garageid; }
 
     public String getBranch() {
         return branch;
