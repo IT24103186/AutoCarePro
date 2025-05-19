@@ -8,10 +8,10 @@ import java.util.List;
 @Repository
 public class VehicleRepository {
     private LinkedList<Vehicle> Vehicles = new LinkedList<>();
-    private static int nextId = 0;
+    private static int nextId = 1;
 
     public String save(Vehicle vehicle) {
-        if (vehicle.getVehicleId() == 1) {
+        if (vehicle.getVehicleId() == 0) {
             vehicle.setVehicleId(nextId++);
         }
         Vehicles.add(vehicle);
