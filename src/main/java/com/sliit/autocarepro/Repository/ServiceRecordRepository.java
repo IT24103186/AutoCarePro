@@ -38,6 +38,8 @@ public class ServiceRecordRepository {
             existing.setCustomer(serviceRecord.getCustomer());
             existing.setVehicle(serviceRecord.getVehicle());
             existing.setService(serviceRecord.getService());
+            existing.setCost(serviceRecord.getCost());
+            existing.setStatus(serviceRecord.getStatus());
         }
         return "Update Successful";
 
