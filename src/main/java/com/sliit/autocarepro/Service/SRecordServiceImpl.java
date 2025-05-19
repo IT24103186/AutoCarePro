@@ -8,25 +8,30 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SRecordService {
+public class SRecordServiceImpl implements SRecordService {
     
     private final ServiceRecordRepository serviceRecordRepository;
 
-    @Autowired
-    public SRecordService(ServiceRecordRepository serviceRecordRepository) {
-        this.serviceRecordRepository = serviceRecordRepository;}
-        public String registerServiceRecord(ServiceRecord serviceRecord) {
+    public SRecordServiceImpl(ServiceRecordRepository serviceRecordRepository) {
+        this.serviceRecordRepository = serviceRecordRepository;
+    }
+
+    @Override
+    public String registerServiceRecord(ServiceRecord serviceRecord) {
         return serviceRecordRepository.save(serviceRecord);
     }
 
+    @Override
     public List<ServiceRecord> getAllServiceRecord() {
         return serviceRecordRepository.findAll();
     }
 
+    @Override
     public String updateServiceRecord(ServiceRecord serviceRecord, int recordID) {
       return   serviceRecordRepository.update(serviceRecord,recordID);
     }
 
+    @Override
     public void deleteServiceRecord(int recordID) {
         serviceRecordRepository.deleteByRecordId(recordID);
     }
