@@ -7,7 +7,6 @@ public class Garage {
     private String location;
     private String managerName;
 
-
     public Garage(int garageId, String branch, String location, String managerName) {
         this.garageId = garageId;
         this.branch   = branch;

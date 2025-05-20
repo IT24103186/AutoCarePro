@@ -21,6 +21,7 @@ public class Vehicle {
         this.VIN = VIN;
     }
 
+    // Getters & Setters
     public int getVehicleId() {return vehicleId;}
     public void setVehicleId(int vehicleId) {this.vehicleId = vehicleId;}
 
@@ -65,5 +66,4 @@ public class Vehicle {
     public void setVIN(String VIN) {
         this.VIN = VIN;
     }
-
 }

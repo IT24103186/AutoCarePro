@@ -18,7 +18,6 @@ public class ServiceType {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -26,7 +25,6 @@ public class ServiceType {
     public String getService() {
         return service;
     }
-
     public void setService(String service) {
         this.service = service;
     }
@@ -34,7 +32,6 @@ public class ServiceType {
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -42,7 +39,6 @@ public class ServiceType {
     public String getTimeRequired() {
         return timeRequired;
     }
-
     public void setTimeRequired(String timeRequired) {
         this.timeRequired = timeRequired;
     }
@@ -50,7 +46,6 @@ public class ServiceType {
     public String getPriceRange() {
         return priceRange;
     }
-
     public void setPriceRange(String priceRange) {
         this.priceRange = priceRange;
     }

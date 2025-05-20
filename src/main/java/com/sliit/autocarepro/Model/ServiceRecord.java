@@ -20,7 +20,6 @@ public class ServiceRecord {
         this.status = status;
         this.recordID = recordID;
     }
-
     // Get Methods
     public Date getDate() {
         return date;
@@ -72,6 +71,7 @@ public class ServiceRecord {
     public void setStatus(String status) {
         this.status = status;
     }
+
     public void setRecordID(int recordID) {
         this.recordID = recordID;
     }

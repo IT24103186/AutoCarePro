@@ -18,7 +18,6 @@ public class UserRepository {
     public String save(User user) {
         if (user.getId() == 0) {
             user.setId(nextId++);
-
         }
         users.add(user);
         saveToTextFile();
@@ -33,7 +32,6 @@ public class UserRepository {
         return users.stream().filter(c -> c.getId() == id).findFirst().orElse(null);
     }
 
-
     public void update(User user, int id) {
         User existing = findById(id);
         if (existing != null) {
@@ -43,8 +41,6 @@ public class UserRepository {
         }
         saveToTextFile();
     }
-
-
 
     public void delete(int id) {
         users.removeIf(c -> c.getId() == id);

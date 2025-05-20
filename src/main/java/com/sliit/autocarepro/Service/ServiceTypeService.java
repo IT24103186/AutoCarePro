@@ -17,7 +17,6 @@ public class ServiceTypeService {
         this.serviceTypeRepository = serviceTypeRepository;
     }
 
-
     public String registerServiceType(ServiceType serviceType) {
         return serviceTypeRepository.save(serviceType);
     }

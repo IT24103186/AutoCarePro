@@ -1,1 +1,1 @@
-garageId: 1, branch: null, location: ww, managerName: ww garageId: 2, branch: null, location: ww, managerName: ww 
+garageId: 1, branch: Kurunegala, location: 123 Rajapihilla Rd Kurunegala, managerName: amila

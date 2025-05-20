@@ -1,6 +1,5 @@
 package com.sliit.autocarepro.Model;
 
-
 import java.sql.Time;
 import java.util.Date;
 
@@ -12,7 +11,6 @@ public class MaintenanceSchedule {
     private String serviceType;
     private String status;
 
-
     public MaintenanceSchedule(int scheduleId, Date date, Time time, String plateNumber, String serviceType , String status) {
         this.scheduleId = scheduleId;
         this.date = date;
@@ -22,17 +20,14 @@ public class MaintenanceSchedule {
         this.status = status;
     }
 
-
     public int getScheduleId() {return scheduleId; }
     public void setScheduleId(int scheduleId) {this.scheduleId = scheduleId; }
 
     public Date getDate() {return date;}
     public void setDate(Date date) { this.date = date;}
 
-
     public Time getTime() {return time; }
     public void setTime(Time time) { this.time = time;}
-
 
     public String getPlateNumber() { return plateNumber; }
     public void setPlateNumber(String plateNumber) { this.plateNumber = plateNumber;}
