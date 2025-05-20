@@ -15,18 +15,22 @@ public class VehicleServiceImpl implements VehicleService {
     public VehicleServiceImpl(VehicleRepository vehicleRepository) {
         this.vehicleRepository = vehicleRepository;}
 
+    @Override
     public String registerVehicle(Vehicle vehicle) {
         return vehicleRepository.save(vehicle);
     }
 
+    @Override
     public List<Vehicle> getAllVehicles() {
         return vehicleRepository.findAll();
     }
 
+    @Override
     public String updateVehicle(Vehicle vehicle,int vehicleId) {
        return vehicleRepository.update(vehicle, vehicleId);
     }
 
+    @Override
     public void deleteVehicle(int vehiclesId) {
         vehicleRepository.delete(vehiclesId);
     }
