@@ -1,6 +1,5 @@
 package com.sliit.autocarepro.Repository;
 
-import com.sliit.autocarepro.Model.ServiceRecord;
 import com.sliit.autocarepro.Model.Vehicle;
 import org.springframework.stereotype.Repository;
 
@@ -35,7 +34,7 @@ public class VehicleRepository {
     }
 
 
-    public void update(Vehicle vehicle, int vehicleId ) {
+    public String update(Vehicle vehicle, int vehicleId ) {
         Vehicle existing = findById(vehicleId);
         if (existing != null) {
             existing.setMake(vehicle.getMake());
@@ -46,6 +45,7 @@ public class VehicleRepository {
             existing.setVIN(vehicle.getVIN());
         }
         saveToTextFile();
+        return "Update Successful";
     }
 
     public void delete(int vehicleId) {
