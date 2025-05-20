@@ -1,33 +1,13 @@
 package com.sliit.autocarepro.Service;
 
 import com.sliit.autocarepro.Model.Vehicle;
-import com.sliit.autocarepro.Repository.VehicleRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
-public class VehicleService {
 
-    private final VehicleRepository vehicleRepository;
+public interface VehicleService {
 
-    @Autowired
-    public VehicleService(VehicleRepository vehicleRepository) {
-        this.vehicleRepository = vehicleRepository;}
-
-    public String registerVehicle(Vehicle vehicle) {
-        return vehicleRepository.save(vehicle);
-    }
-
-    public List<Vehicle> getAllVehicles() {
-        return vehicleRepository.findAll();
-    }
-
-    public void updateVehicle(Vehicle vehicle,int vehicleId) {
-        vehicleRepository.update(vehicle, vehicleId);
-    }
-
-    public void deleteVehicle(int vehiclesId) {
-        vehicleRepository.delete(vehiclesId);
-    }
+    public String registerVehicle(Vehicle serviceRecord);
+    public List<Vehicle> getAllVehicles();
+    public String updateVehicle(Vehicle serviceRecord, int recordID);
+    public void deleteVehicle(int vehicleId);
 }
