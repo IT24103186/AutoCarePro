@@ -6,12 +6,12 @@ import java.util.Date;
 public class MaintenanceSchedule {
     private int scheduleId;
     private Date date;
-    private Time time;
+    private String time;
     private String plateNumber;
     private String serviceType;
     private String status;
 
-    public MaintenanceSchedule(int scheduleId, Date date, Time time, String plateNumber, String serviceType , String status) {
+    public MaintenanceSchedule(int scheduleId, Date date, String time, String plateNumber, String serviceType , String status) {
         this.scheduleId = scheduleId;
         this.date = date;
         this.time = time;
@@ -26,8 +26,8 @@ public class MaintenanceSchedule {
     public Date getDate() {return date;}
     public void setDate(Date date) { this.date = date;}
 
-    public Time getTime() {return time; }
-    public void setTime(Time time) { this.time = time;}
+    public String getTime() {return time; }
+    public void setTime(String time) { this.time = time;}
 
     public String getPlateNumber() { return plateNumber; }
     public void setPlateNumber(String plateNumber) { this.plateNumber = plateNumber;}

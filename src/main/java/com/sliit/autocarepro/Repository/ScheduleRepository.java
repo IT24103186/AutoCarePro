@@ -78,7 +78,7 @@ public class ScheduleRepository {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (MaintenanceSchedule record : schedules) {
-                writer.write(String.format("scheduleId: %d, date: %s, time: %s, plateNumber: %s, serviceType: %s, status: %s",
+                writer.write(String.format("scheduleId: %d, date: %s, time: %s, plateNumber: %s, serviceType: %s, status: %s%n",
                         record.getScheduleId(),
                         record.getDate(),
                         record.getTime(),

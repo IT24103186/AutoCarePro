@@ -68,7 +68,7 @@ public class VehicleRepository {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (Vehicle record : Vehicles) {
-                writer.write(String.format("vehicleID: %d, make: %s, model: %s, color: %s, year: %s, plateNumber: %s, vin: %s",
+                writer.write(String.format("vehicleID: %d, make: %s, model: %s, color: %s, year: %s, plateNumber: %s, vin: %s%n",
                         record.getVehicleId(),
                         record.getMake(),
                         record.getModel(),

@@ -62,7 +62,7 @@ public class UserRepository {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (User record : users) {
-                writer.write(String.format("id: %d, name: %s, email: %s, phone: %s, password: %s, role: %s",
+                writer.write(String.format("id: %d, name: %s, email: %s, phone: %s, password: %s, role: %s%n",
                         record.getId(),
                         record.getName(),
                         record.getEmail(),

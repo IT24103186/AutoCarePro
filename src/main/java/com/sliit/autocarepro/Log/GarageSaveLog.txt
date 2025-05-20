@@ -1,1 +1,0 @@
-garageId: 1, branch: Kurunegala, location: 123 Rajapihilla Rd Kurunegala, managerName: amila

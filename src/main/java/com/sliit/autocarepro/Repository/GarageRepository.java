@@ -66,7 +66,7 @@ public class GarageRepository {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (Garage record : garages) {
-                writer.write(String.format("garageId: %d, branch: %s, location: %s, managerName: %s ",
+                writer.write(String.format("garageId: %d, branch: %s, location: %s, managerName: %s%n",
                         record.getId(),
                         record.getBranch(),
                         record.getLocation(),

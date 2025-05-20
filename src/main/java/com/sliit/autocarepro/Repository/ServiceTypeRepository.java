@@ -66,7 +66,7 @@ public class ServiceTypeRepository {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (ServiceType record : serviceTypes) {
-                writer.write(String.format("id: %d, service: %s, description: %s, timeRequired: %s, priceRange: %s",
+                writer.write(String.format("id: %d, service: %s, description: %s, timeRequired: %s, priceRange: %s%n",
                         record.getId(),
                         record.getService(),
                         record.getDescription(),

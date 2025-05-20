@@ -1,1 +1,0 @@
-vehicleID: 1, make: honda, model: cr, color: red, year: Tue May 20 05:30:00 IST 2025, plateNumber: 123, vin: 5645
