@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface VehicleService {
 
-    public String registerVehicle(Vehicle serviceRecord);
+    public String registerVehicle(Vehicle vehicle);
     public List<Vehicle> getAllVehicles();
-    public String updateVehicle(Vehicle serviceRecord, int recordID);
+    public String updateVehicle(Vehicle vehicle, int vehicleID);
     public void deleteVehicle(int vehicleId);
 }
