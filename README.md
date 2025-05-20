@@ -17,8 +17,8 @@ AutoCarePro is a full-stack web application designed to help users track and man
 ## 🛠️ Technologies Used
 
 ### Frontend
-- HTML5
-- CSS3
+- HTML
+- CSS
 - Javascript 
 
 ### Backend
